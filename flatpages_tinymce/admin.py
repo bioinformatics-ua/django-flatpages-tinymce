@@ -22,7 +22,7 @@ class FlatPageAdmin(flatpages_admin.FlatPageAdmin):
         # Once Django 1.4 is commonplace, add raise_exception=True to permission_required.
         self.ajax_save = csrf_protect(permission_required('flatpages.change_flatpage')(self._ajax_save))
 
-    @transaction.commit_on_success
+    @transaction.atomic
     def _ajax_save(self, request):
         try:
             page_id = int(request.REQUEST.get("id", 0))
