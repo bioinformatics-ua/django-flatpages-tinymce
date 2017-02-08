@@ -10,7 +10,7 @@ from tinymce.widgets import TinyMCE
 from flatpages_tinymce import settings
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.decorators.csrf import csrf_protect
 
 
@@ -40,9 +40,9 @@ class FlatPageAdmin(flatpages_admin.FlatPageAdmin):
 
     def get_urls(self):
         urls = super(FlatPageAdmin, self).get_urls()
-        my_urls = patterns('',
+        my_urls = [
             url(r'^ajax-save/$', self.admin_site.admin_view(self.ajax_save), name='flatpages_ajax_save'),
-        )
+        ]
         return my_urls + urls
 
     def formfield_for_dbfield(self, db_field, **kwargs):
