@@ -1,6 +1,6 @@
 from django.db import transaction
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django import forms
 from django.contrib import admin
 from django.contrib.auth.decorators import permission_required
