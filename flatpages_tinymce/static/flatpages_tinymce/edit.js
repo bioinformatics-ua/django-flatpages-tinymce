@@ -53,7 +53,7 @@ $_STATICPAGES_INIT = function(params){
 	 var edit_link = getElementsByClass('edit',document.getElementById(params.prefix + '_header'))[0];
 	 var save_link = getElementsByClass('save',document.getElementById(params.prefix + '_header'))[0];
 	 var cancel_link = getElementsByClass('cancel',document.getElementById(params.prefix + '_header'))[0];
-     var attachments_link = getElementsByClass('attachments',document.getElementById(params.prefix + '_header'))[0];
+     var attachments_link = getElementsByClass('attachments')[0];
 	 var page_id = parseInt(document.getElementById(params.prefix+'_page_id').value,10);
 	 var mce_displayed = false;
 

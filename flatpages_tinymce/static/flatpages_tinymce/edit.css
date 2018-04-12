@@ -38,3 +38,14 @@
     border:1px solid #6c6;
     color:white;
 }
+
+#django_staticpages_edit_header a.attachments{
+    color:#99f;
+    border:1px solid #99f;
+}
+
+#django_staticpages_edit_header a.attachments:hover{
+    background-color:#99f;
+    border:1px solid #99f;
+    color:white;
+}
