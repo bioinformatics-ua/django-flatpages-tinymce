@@ -25,12 +25,12 @@ class FlatPageAdmin(flatpages_admin.FlatPageAdmin):
     @transaction.atomic
     def _ajax_save(self, request):
         try:
-            page_id = int(request.get("id", 0))
+            page_id = int(request.POST.get("id", 0))
         except ValueError:
             page_id = 0
 
         page = get_object_or_404(FlatPage, id=page_id)
-        page_content = request.get("content", "").strip()
+        page_content = request.POST.get("content", "").strip()
         if not page_content:
             raise Http404()
         page.content = page_content
