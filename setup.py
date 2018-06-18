@@ -2,7 +2,7 @@
 import os,sys
 from setuptools import setup, find_packages
 
-version = "0.1.0"
+version = "0.1.1"
 
 long_description = open('README.rst').read()
 
@@ -29,6 +29,6 @@ setup(name='django-flatpages-tinymce',
       license='MIT',
       packages=find_packages(),
       include_package_data=True,
-      requires = ['django_tinymce (>=1.5)', 'Django (>=1.3)'],
+      requires = ['django_tinymce (>=1.5)', 'Django (>=1.9)'],
       entry_points={},
       zip_safe=False)
