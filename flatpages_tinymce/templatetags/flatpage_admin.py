@@ -1,5 +1,5 @@
 import os
-import simplejson
+import json
 
 # Settings
 from django.conf import settings
@@ -61,7 +61,7 @@ def flatpage_media(context):
         'error_message': _(u'Error while saving. Please try again.'),
         'csrf_token': unicode(context['csrf_token']),
         }
-    output_chunks.append('<script type="text/javascript">$_STATICPAGES_INIT(%s)</script>' % simplejson.dumps(params))
+    output_chunks.append('<script type="text/javascript">$_STATICPAGES_INIT(%s)</script>' % json.dumps(params))
 
     context.render_context["flatpage_media_loaded"] = 1
     return mark_safe("\n".join(output_chunks))
